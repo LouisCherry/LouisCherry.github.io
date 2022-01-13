@@ -5,7 +5,6 @@ tags:
 - mysql
 - 索引
 - hash
-- Btree
 ---
 
 ```
