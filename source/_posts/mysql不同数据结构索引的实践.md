@@ -48,6 +48,4 @@ EXPLAIN SELECT * from mymemory ORDER BY c2;
 
 -- TODO Hash不能使用最左前缀原则进行优化；
 -- TODO Hash冲突导致性能底下。
-
-
 ```
