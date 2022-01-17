@@ -26,7 +26,6 @@ jobs:
           node -v
           npm i -g hexo-cli
           npm i
-          npm update
           hexo clean
           hexo g
 
