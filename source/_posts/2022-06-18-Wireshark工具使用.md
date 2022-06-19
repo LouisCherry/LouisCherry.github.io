@@ -27,3 +27,8 @@ tcp.port==<target-port>
 
 > wireshark选择网卡的时候需要选择 <npcap loopback adapter网卡（环回网卡）>
 
+## FAQ
+
+1.使用本地工程调试，无法显示http协议
+解答：在http协议的配置中，配置tcp端口，比如本地工程开放8009端口调试，则在此处添加8009端口。
+
