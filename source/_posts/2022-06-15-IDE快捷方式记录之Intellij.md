@@ -1,5 +1,5 @@
 ---
-title: IDE快捷方式记录之Intellij
+title: IDE快捷方式记录之Intellij(Mac)
 date: 2022-06-15 06:56:30
 tags:
 - IDE
@@ -14,6 +14,9 @@ tags:
 
 
 ## 调试相关
+
+代码前一个位置：command+[
+代码后一个位置：command+]
 
 
 ## 本文涉及快捷方式Setting备份
