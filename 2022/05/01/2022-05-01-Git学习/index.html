@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"louischerry.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="gitignore 常用规则总结12345678910111213141516171819202122232425262728# 1.忽略public下的所有目录及文件&#x2F;public&#x2F;*# 2.不忽略&#x2F;public&#x2F;assets，就是特例的意思，assets文件不忽略!&#x2F;public&#x2F;assets# 3.忽略具体的文件index.html# 4.忽略所有的java文件*.java# 5.忽略 a.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git学习">
+<meta property="og:url" content="https://louischerry.github.io/2022/05/01/2022-05-01-Git%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="LouisCherry&#39;s Blog">
+<meta property="og:description" content="gitignore 常用规则总结12345678910111213141516171819202122232425262728# 1.忽略public下的所有目录及文件&#x2F;public&#x2F;*# 2.不忽略&#x2F;public&#x2F;assets，就是特例的意思，assets文件不忽略!&#x2F;public&#x2F;assets# 3.忽略具体的文件index.html# 4.忽略所有的java文件*.java# 5.忽略 a.">
+<meta property="og:locale">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/663a8ca76e507305eb3c816b26562482.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/b0d7461ed076aafcd565463077aac8d2.png">
+<meta property="article:published_time" content="2022-05-01T08:52:25.000Z">
+<meta property="article:modified_time" content="2023-09-13T14:57:07.604Z">
+<meta property="article:author" content="LouisCherry">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/img_convert/663a8ca76e507305eb3c816b26562482.png">
+
+
+<link rel="canonical" href="https://louischerry.github.io/2022/05/01/2022-05-01-Git%E5%AD%A6%E4%B9%A0/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-Hans","comments":true,"permalink":"https://louischerry.github.io/2022/05/01/2022-05-01-Git%E5%AD%A6%E4%B9%A0/","path":"2022/05/01/2022-05-01-Git学习/","title":"Git学习"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Git学习 | LouisCherry's Blog</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">LouisCherry's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#gitignore-%E5%B8%B8%E7%94%A8%E8%A7%84%E5%88%99%E6%80%BB%E7%BB%93"><span class="nav-number">1.</span> <span class="nav-text">gitignore 常用规则总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fork-%E4%BB%A3%E7%A0%81%E4%B9%8B%E5%90%8E%EF%BC%8C%E5%A6%82%E4%BD%95%E5%86%8D%E6%9B%B4%E6%96%B0-%E8%A2%ABfork%E7%9A%84%E5%B7%A5%E7%A8%8B%E7%9A%84%E4%BB%A3%E7%A0%81"><span class="nav-number">2.</span> <span class="nav-text">fork 代码之后，如何再更新 被fork的工程的代码</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">LouisCherry</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://louischerry.github.io/2022/05/01/2022-05-01-Git%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="LouisCherry">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LouisCherry's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Git学习
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-05-01 16:52:25" itemprop="dateCreated datePublished" datetime="2022-05-01T16:52:25+08:00">2022-05-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-09-13 22:57:07" itemprop="dateModified" datetime="2023-09-13T22:57:07+08:00">2023-09-13</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="gitignore-常用规则总结"><a href="#gitignore-常用规则总结" class="headerlink" title="gitignore 常用规则总结"></a>gitignore 常用规则总结</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 1.忽略public下的所有目录及文件</span><br><span class="line">/public/*</span><br><span class="line"></span><br><span class="line"># 2.不忽略/public/assets，就是特例的意思，assets文件不忽略</span><br><span class="line">!/public/assets</span><br><span class="line"></span><br><span class="line"># 3.忽略具体的文件</span><br><span class="line">index.html</span><br><span class="line"></span><br><span class="line"># 4.忽略所有的java文件</span><br><span class="line">*.java</span><br><span class="line"></span><br><span class="line"># 5.忽略 a.java b.java</span><br><span class="line">[ab].java</span><br><span class="line"></span><br><span class="line"># 6.忽略 doc/ 目录及其所有子目录下的 .pdf 文件</span><br><span class="line">doc/**/*.pdf</span><br><span class="line"></span><br><span class="line"># 7.忽略 doc/notes.txt，但不忽略 doc/server/arch.txt</span><br><span class="line">doc/*.txt</span><br><span class="line"></span><br><span class="line"># 8.忽略任何目录下名为 target 的文件夹</span><br><span class="line">target/</span><br><span class="line"></span><br><span class="line"># 9.只忽略当前目录下的 TODO 文件，而不忽略 subdir/TODO文件</span><br><span class="line">/TODO</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="fork-代码之后，如何再更新-被fork的工程的代码"><a href="#fork-代码之后，如何再更新-被fork的工程的代码" class="headerlink" title="fork 代码之后，如何再更新 被fork的工程的代码"></a>fork 代码之后，如何再更新 被fork的工程的代码</h3><p>1.先用git remote -v命令先看一下自己的远程分支，在没有添加过远程分支的情况下，会是如下情况：</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/663a8ca76e507305eb3c816b26562482.png"></p>
+<p>这里说明你只有一个别名为origin的远程仓库，你需要把你fork的源项目的仓库也加进来，需要使用如下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add upstream git@https://gitee.com/y_project/RuoYi.git</span><br></pre></td></tr></table></figure>
+
+<p>这里的git remote add 是固定的，upstream是你给你fork的源项目起的别名，取什么自己随意； 最后面就是源项目的git仓库地址。</p>
+<p>执行结束以后，再次运行git remote -v命令：</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/b0d7461ed076aafcd565463077aac8d2.png"></p>
+<p>会出现了新的名为upstream的仓库。说明添加成功了。这时候就可以拉最新代码啦！</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull upstream dev</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p>这里git pull是固定的，upstream是上面你自己起的源项目别名，dev就是你要拉取的源项目分支</p>
+<p>参考资料：<br>1.<a target="_blank" rel="noopener" href="https://www.cnblogs.com/liuyuelinfighting/p/16206037.html">https://www.cnblogs.com/liuyuelinfighting/p/16206037.html</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/git/" rel="tag"># git</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/04/05/2022-04-05-Java%E8%AF%AD%E8%A8%80%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%90%8D%E8%AF%8D%E7%BC%A9%E5%86%99%E8%A7%A3%E9%87%8A/" rel="prev" title="Java语言中一些名词缩写解释">
+                  <i class="fa fa-chevron-left"></i> Java语言中一些名词缩写解释
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/06/08/2022-06-08-Redis%E5%90%84%E7%A7%8D%E6%9E%B6%E6%9E%84%E5%AE%9E%E8%B7%B5/" rel="next" title="Redis各种架构实践(基于docker)">
+                  Redis各种架构实践(基于docker) <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LouisCherry</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

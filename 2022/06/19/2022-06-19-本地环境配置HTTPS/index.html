@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"louischerry.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="使用 mkcert 生成证书https:&#x2F;&#x2F;cloud.tencent.com&#x2F;developer&#x2F;article&#x2F;1986557 https:&#x2F;&#x2F;github.com&#x2F;FiloSottile&#x2F;mkcert 1mkcert localhost 127.0.0.1 192.168.2.0 192.168.101.59 ::1   ::1 代表本地IPv6回环线路  pem 转 pkcs12 文件用于">
+<meta property="og:type" content="article">
+<meta property="og:title" content="本地环境配置HTTPS">
+<meta property="og:url" content="https://louischerry.github.io/2022/06/19/2022-06-19-%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AEHTTPS/index.html">
+<meta property="og:site_name" content="LouisCherry&#39;s Blog">
+<meta property="og:description" content="使用 mkcert 生成证书https:&#x2F;&#x2F;cloud.tencent.com&#x2F;developer&#x2F;article&#x2F;1986557 https:&#x2F;&#x2F;github.com&#x2F;FiloSottile&#x2F;mkcert 1mkcert localhost 127.0.0.1 192.168.2.0 192.168.101.59 ::1   ::1 代表本地IPv6回环线路  pem 转 pkcs12 文件用于">
+<meta property="og:locale">
+<meta property="article:published_time" content="2022-06-19T03:02:55.000Z">
+<meta property="article:modified_time" content="2022-06-22T13:30:42.527Z">
+<meta property="article:author" content="LouisCherry">
+<meta property="article:tag" content="HTTPS">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://louischerry.github.io/2022/06/19/2022-06-19-%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AEHTTPS/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-Hans","comments":true,"permalink":"https://louischerry.github.io/2022/06/19/2022-06-19-%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AEHTTPS/","path":"2022/06/19/2022-06-19-本地环境配置HTTPS/","title":"本地环境配置HTTPS"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>本地环境配置HTTPS | LouisCherry's Blog</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">LouisCherry's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-mkcert-%E7%94%9F%E6%88%90%E8%AF%81%E4%B9%A6"><span class="nav-number">1.</span> <span class="nav-text">使用 mkcert 生成证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pem-%E8%BD%AC-pkcs12-%E6%96%87%E4%BB%B6%E7%94%A8%E4%BA%8Etomcat%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">pem 转 pkcs12 文件用于tomcat配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0Maven-Tomcat%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">本地Maven-Tomcat插件配置</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">LouisCherry</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://louischerry.github.io/2022/06/19/2022-06-19-%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AEHTTPS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="LouisCherry">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LouisCherry's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          本地环境配置HTTPS
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-06-19 11:02:55" itemprop="dateCreated datePublished" datetime="2022-06-19T11:02:55+08:00">2022-06-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-06-22 21:30:42" itemprop="dateModified" datetime="2022-06-22T21:30:42+08:00">2022-06-22</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="使用-mkcert-生成证书"><a href="#使用-mkcert-生成证书" class="headerlink" title="使用 mkcert 生成证书"></a>使用 mkcert 生成证书</h2><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1986557">https://cloud.tencent.com/developer/article/1986557</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/FiloSottile/mkcert">https://github.com/FiloSottile/mkcert</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkcert localhost 127.0.0.1 192.168.2.0 192.168.101.59 ::1</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>::1 代表本地IPv6回环线路</p>
+</blockquote>
+<h2 id="pem-转-pkcs12-文件用于tomcat配置"><a href="#pem-转-pkcs12-文件用于tomcat配置" class="headerlink" title="pem 转 pkcs12 文件用于tomcat配置"></a>pem 转 pkcs12 文件用于tomcat配置</h2><blockquote>
+<p>Java程序通常不支持PEM格式，因此要转化为pkcs12格式</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhihang19941024/article/details/97764160">https://blog.csdn.net/zhihang19941024/article/details/97764160</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/7cb5c2cffaaa">https://www.jianshu.com/p/7cb5c2cffaaa</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">openssl pkcs12 -export -inkey ~/localhost+4-key.pem -in ~/localhost+4.pem -name localhost -out localhost.p12 (将pem文件转成p12文件 命令行会需要密码，记住这个输入的 密码)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="本地Maven-Tomcat插件配置"><a href="#本地Maven-Tomcat插件配置" class="headerlink" title="本地Maven-Tomcat插件配置"></a>本地Maven-Tomcat插件配置</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">在maven配置文件中的tomcat插件里增加下述配置</span><br><span class="line"></span><br><span class="line">&lt;httpsPort&gt;8093&lt;/httpsPort&gt;</span><br><span class="line">&lt;keystoreFile&gt;$&#123;basedir&#125;/src/main/resources/localhost.p12&lt;/keystoreFile&gt;</span><br><span class="line">&lt;keystorePass&gt;123456&lt;/keystorePass&gt;</span><br><span class="line">&lt;keystoreType&gt;PKCS12&lt;/keystoreType&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>以下提供一个完整的tomcat插件的配置</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;plugin&gt;</span><br><span class="line">    &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.2&lt;/version&gt;</span><br><span class="line">    &lt;configuration&gt;</span><br><span class="line">        &lt;uriEncoding&gt;UTF-8&lt;/uriEncoding&gt;</span><br><span class="line">        &lt;url&gt;http://localhost:$&#123;maven.tomcat.port&#125;/&lt;/url&gt;</span><br><span class="line">        &lt;server&gt;tomcat7&lt;/server&gt;</span><br><span class="line">        &lt;systemProperties&gt;</span><br><span class="line">            &lt;bootClass&gt;$&#123;bootClass&#125;&lt;/bootClass&gt;</span><br><span class="line">            &lt;server.port&gt;$&#123;maven.tomcat.port&#125;&lt;/server.port&gt;</span><br><span class="line">            &lt;server.context-path&gt;/$&#123;project.artifactId&#125;/rest&lt;/server.context-path&gt;</span><br><span class="line">        &lt;/systemProperties&gt;</span><br><span class="line">        &lt;httpsPort&gt;8093&lt;/httpsPort&gt;</span><br><span class="line">        &lt;keystoreFile&gt;$&#123;basedir&#125;/src/main/resources/localhost.p12&lt;/keystoreFile&gt;</span><br><span class="line">        &lt;keystorePass&gt;123456&lt;/keystorePass&gt;</span><br><span class="line">        &lt;keystoreType&gt;PKCS12&lt;/keystoreType&gt;</span><br><span class="line">    &lt;/configuration&gt;</span><br><span class="line">&lt;/plugin&gt;</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/HTTPS/" rel="tag"># HTTPS</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/06/18/2022-06-18-Wireshark%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" rel="prev" title="Wireshark工具使用">
+                  <i class="fa fa-chevron-left"></i> Wireshark工具使用
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/07/03/2022-07-03-SpringBoot%E8%A7%A3%E5%AF%86%E9%98%85%E8%AF%BB/" rel="next" title="SpringBoot解密阅读">
+                  SpringBoot解密阅读 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LouisCherry</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
